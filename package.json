@@ -1,0 +1,29 @@
+{
+  "name": "katie",
+  "version": "1.0.0",
+  "description": "katie's photography site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brettkoz/katiekozma.git"
+  },
+  "keywords": [
+    "MEAN",
+    "Photography",
+    "Portfolio"
+  ],
+  "author": "Brett Kozma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brettkoz/katiekozma/issues"
+  },
+  "homepage": "https://github.com/brettkoz/katiekozma#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mongoose": "^5.0.12"
+  }
+}
