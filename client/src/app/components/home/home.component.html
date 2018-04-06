@@ -1,0 +1,23 @@
+<div class="floater text-center">
+    
+</div>
+<div class="container-fluid splash0 animatedSlow fadeIn" *ngIf="iterator==0">
+
+
+</div>
+<div class="container-fluid splash1 animatedSlow fadeIn" *ngIf="iterator == 1">
+
+
+</div>
+<div class="container-fluid splash2 animatedSlow fadeIn" *ngIf="iterator == 2">
+
+
+</div>
+<div class="container-fluid textContainer text-center">
+        <h1>Capturing West Michigan</h1>
+    <div class="row text-center">
+        <div class="col-md-4 col-lg-3 imageContainer" *ngFor="let photo of homePhotos">
+           <img class="img-thumbnail" [src]="photo.url">
+        </div>
+    </div>
+</div>

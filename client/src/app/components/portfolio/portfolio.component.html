@@ -1,0 +1,18 @@
+<ngx-image-gallery 
+[images]="images" 
+[conf]="conf"
+(onOpen)="galleryOpened($event)"
+(onClose)="galleryClosed()"
+(onImageClicked)="galleryImageClicked($event)"
+(onImageChange)="galleryImageChanged($event)"
+(onDelete)="deleteImage($event)"
+
+></ngx-image-gallery>
+<h1>PORTFOLIO</h1>
+<div class="container-fluid">
+  <div class="card-columns">
+    <div class="imageContainer card card-outline" *ngFor="let photo of images; let i = index;">
+      <img [src]="photo.url" class="hide-on-init" animateOnScroll animationName="animatedReg fadeInUp" (click)="galleryImageClicked(i)">
+    </div>
+  </div>  
+</div>

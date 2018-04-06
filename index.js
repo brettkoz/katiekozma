@@ -1,8 +1,12 @@
 const express = require('express');
-const config = require('./config/database');
 
 const app = express();
+const router = express.Router();
 const mongoose = require('mongoose');
+const config = require('./config/database');
+const path = require('path');
+const bodyParser = require('body-parser');
+const authentication = require('./routes/authentication')(router);
 
 mongoose.connect(config.uri,(err) =>{
     if (err){
@@ -15,8 +19,11 @@ mongoose.connect(config.uri,(err) =>{
 
 mongoose.Promise = global.Promise;
 const port = 3000;
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(express.static(__dirname + '/client/dist/'));
+app.use('/authentication',authentication);
 app.get('*',(req,res) => {
-    res.send('Fuck off, motherfucker');
+    res.sendFile(path.join(__dirname + '/client/dist/index.html'));
 });
 
 app.listen(port, () => {

@@ -1,0 +1,21 @@
+.form-signin{
+    max-width:250px;
+}
+.form-signin button{
+    margin-top:15px;
+}
+.formContainer {
+   float:none;
+   margin:0 auto;
+   width:250px;
+   padding-top:50px;
+}
+.appContainer {
+    min-height:80% !important;
+    
+    position: relative;
+    margin-bottom:-150px;
+}
+.ng-invalid.ng-touched {
+    border:1px solid red;
+}

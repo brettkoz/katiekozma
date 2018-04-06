@@ -1,0 +1,26 @@
+.logo {
+    height:75px;
+    margin-top:20px;
+}
+.topNavBar {
+    min-height:150px;
+    width:100%;
+    top:0;
+    background-color: #fff;
+}
+#navList{
+    position: relative;
+}
+
+.topNav li a {
+    color:#000;
+    
+    top:35%;
+}
+.topNav li a:hover {
+    color:#ccc;
+}
+
+.nav-item {
+    margin:5px;
+}

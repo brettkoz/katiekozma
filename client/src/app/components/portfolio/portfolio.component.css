@@ -1,0 +1,45 @@
+.imageContainer img {
+    width:100%;
+}
+.imageContainer{
+    width:100%;
+    height:auto;
+    margin:5px 0 !important;
+}
+.imageContainer:hover{
+    cursor: pointer;
+    -moz-box-shadow: 0 0 10px #ccc;
+    -webkit-box-shadow: 0 0 10px #ccc;
+    box-shadow: 0 0 10px #ccc;
+}
+.card {
+    padding:0 !important;
+}
+.animatedReg {
+    visibility: visible !important;
+}
+.hide-on-init {
+    visibility: hidden;
+}
+  @media only screen and (min-width:500px){
+      .card-columns{
+          column-count: 1;
+      }
+    }
+  @media only screen and (min-width:700px){
+    .card-columns{
+        column-count: 2;
+    }
+  }
+  @media only screen and (min-width:900px){
+    .card-columns{
+        column-count: 3;
+    }
+    }
+@media only screen and (min-width:1200px){
+    .card-columns{
+        column-count: 3;
+    }
+}
+
+
