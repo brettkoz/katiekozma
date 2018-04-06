@@ -3,9 +3,25 @@ mongoose.Promise = global.Promise;
 const schema = mongoose.Schema;
 const bcrypt = require('bcrypt-nodejs');
 
+let validUsername = (username) => {
+    if (!username){
+        return false;
+    } else {
+        const regExp = new RegExp(/^[a-zA-Z0-9]+$/);
+        return regExp.test(username);
+    }
+}
+
+const usernameValidators = [
+    {
+        validator:validUsername,
+        message:'Username Must Only Contain Letters and Numbers.'
+    }
+]
+
 const userSchema = new schema({
     email: {type:String,required:true,unique:true,lowercase:true},
-    username: {type:String,required:true,unique:true,lowercase:true},
+    username: {type:String,required:true,unique:true,lowercase:true,validate:usernameValidators},
     role:{type:String,required:true},
     password:{type:String,required:true}
 });
