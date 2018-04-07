@@ -11,12 +11,23 @@ import { HomeComponent } from './components/home/home.component';
 import { RegisterComponent } from './components/register/register.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { LoginComponent } from './components/login/login.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { UsersComponent } from './components/dashboard/components/users/users.component';
+import { UploadComponent } from './components/dashboard/components/upload/upload.component';
+import { MailComponent } from './components/dashboard/components/mail/mail.component';
 
 const routes:Routes = [
   { path:'',component:HomeComponent },
   { path:'register',component:RegisterComponent },
   { path:'portfolio',component:PortfolioComponent },
-  { path:'login',component:LoginComponent }
+  { path:'login',component:LoginComponent },
+  { path:'dashboard',component:DashboardComponent,
+      children: [
+        { path: '', redirectTo: 'upload', pathMatch: 'full' },
+        { path:'upload',component:UploadComponent },
+        { path:'users',component:UsersComponent },
+        { path: 'mail', component:MailComponent }
+      ] }
 ];
 
 @NgModule({
@@ -27,7 +38,11 @@ const routes:Routes = [
     HomeComponent,
     RegisterComponent,
     PortfolioComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent,
+    UsersComponent,
+    UploadComponent,
+    MailComponent
   ],
   imports: [
     NgxImageGalleryModule,
