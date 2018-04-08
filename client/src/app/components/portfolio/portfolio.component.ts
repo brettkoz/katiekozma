@@ -1,5 +1,7 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
 import { NgxImageGalleryComponent, GALLERY_IMAGE, GALLERY_CONF } from "ngx-image-gallery";
+import { PortfolioService } from '../../services/portfolio.service';
+import { Photo } from '../../models/Photo.model';
 
 @Component({
   selector: 'app-portfolio',
@@ -8,6 +10,7 @@ import { NgxImageGalleryComponent, GALLERY_IMAGE, GALLERY_CONF } from "ngx-image
 })
 export class PortfolioComponent implements OnInit {
   @ViewChild(NgxImageGalleryComponent) ngxImageGallery: NgxImageGalleryComponent;
+    images:Photo [];
     // gallery configuration
     conf: GALLERY_CONF = {
       imageOffset: '0px',
@@ -15,68 +18,10 @@ export class PortfolioComponent implements OnInit {
       showImageTitle: false,
     };
       
-    // gallery images
-    images: GALLERY_IMAGE[] = [
-      {
-        url: "../../../assets/images/bg.jpg", 
-        altText: 'bg', 
-        title: 'bg',
-        thumbnailUrl: "../../../assets/images/bg.jpg"
-      },
-      {
-        url: "../../../assets/images/bg3.jpg", 
-        altText: 'two-woman-standing-on-the-ground-and-staring-at-the-mountain', 
-        thumbnailUrl: "../../../assets/images/bg3.jpg"
-      },
-      {
-        url: "../../../assets/images/bg.jpg", 
-        altText: 'bg', 
-        title: 'bg',
-        thumbnailUrl: "../../../assets/images/bg.jpg"
-      },
-      {
-        url: "../../../assets/images/bg2.jpg", 
-        altText: 'two-woman-standing-on-the-ground-and-staring-at-the-mountain', 
-        thumbnailUrl: "../../../assets/images/bg2.jpg"
-      },
-      
-     
-      {
-        url: "../../../assets/images/bg3.jpg", 
-        altText: 'two-woman-standing-on-the-ground-and-staring-at-the-mountain', 
-        thumbnailUrl: "../../../assets/images/bg3.jpg"
-      },
-      {
-        url: "../../../assets/images/bg.jpg", 
-        altText: 'bg', 
-        title: 'bg',
-        thumbnailUrl: "../../../assets/images/bg.jpg"
-      },
-      {
-        url: "../../../assets/images/bg2.jpg", 
-        altText: 'two-woman-standing-on-the-ground-and-staring-at-the-mountain', 
-        thumbnailUrl: "../../../assets/images/bg2.jpg"
-      },
-      {
-        url: "../../../assets/images/bg.jpg", 
-        altText: 'bg', 
-        title: 'bg',
-        thumbnailUrl: "../../../assets/images/bg.jpg"
-      },
-      {
-        url: "../../../assets/images/bg.jpg", 
-        altText: 'bg', 
-        title: 'bg',
-        thumbnailUrl: "../../../assets/images/bg.jpg"
-      },
-      {
-        url: "../../../assets/images/bg2.jpg", 
-        altText: 'two-woman-standing-on-the-ground-and-staring-at-the-mountain', 
-        thumbnailUrl: "../../../assets/images/bg2.jpg"
-      },
-      
-    ];
-  constructor() { }
+   
+  constructor(private portfolioService:PortfolioService) { 
+    this.images = portfolioService.images;
+  }
 
   ngOnInit() {
     

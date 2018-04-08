@@ -1,0 +1,18 @@
+<div class="container dashboardContainer text-center">
+  <h1 class="page-header">Dashboard</h1>
+  <div class="card">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="upload" [routerLinkActive]="['active']">Upload</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="users" [routerLinkActive]="['active']">Users</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="mail" [routerLinkActive]="['active']">Mailing List</a>
+      </li>
+    </ul>
+    <router-outlet></router-outlet>
+  </div>
+
+</div>

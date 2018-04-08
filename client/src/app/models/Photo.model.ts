@@ -1,10 +1,10 @@
 export class Photo{
     url:string;
-    date:string;
-    caption:string;
-    constructor(url:string,date:string,caption:string){
+    title:string;
+    altText:string;
+    constructor(url:string,title:string,altText:string){
         this.url = url;
-        this.date = date;
-        this.caption = caption;
+        this.title = title;
+        this.altText = altText;
     }
 }

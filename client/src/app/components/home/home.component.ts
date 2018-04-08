@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Photo } from '../../models/Photo.model';
+import { PortfolioService } from '../../services/portfolio.service';
 
 @Component({
   selector: 'app-home',
@@ -12,17 +13,13 @@ export class HomeComponent implements OnInit {
   image3:boolean = false;
   iterator:number = 0;
   homePhotos:Photo[]=[
-    { url:'../../../assets/images/bg3.jpg',date:'some date',caption:'Some stuff' },
-    { url:'../../../assets/images/bg2.jpg',date:'some date',caption:'Some stuff' },
-    { url:'../../../assets/images/bg.jpg',date:'some date',caption:'Some stuff' },
-    { url:'../../../assets/images/bg3.jpg',date:'some date',caption:'Some stuff' },
-    { url:'../../../assets/images/bg2.jpg',date:'some date',caption:'Some stuff' },
-    { url:'../../../assets/images/bg.jpg',date:'some date',caption:'Some stuff' }
+    
   ];
-  constructor() { }
+  constructor(private portfolioService:PortfolioService) { }
 
   ngOnInit() {
     this.animateBg();
+    this.homePhotos = this.portfolioService.homePhotos;
   }
   animateBg(){
     setInterval(() => {
